@@ -2,7 +2,7 @@ pipeline {
     agent any
     stages {
         stage('Git') {
-            steps { git 'https://github.com/pandian3k/vasu.git' }
+            steps { git 'https://github.com/Bhagya1707/vasu.git' }
         }
 	stage('Build') {
 	            steps { sh label: '', script: 'mvn clean'
@@ -15,7 +15,7 @@ pipeline {
             }
             steps {
                 script {
-                    app = docker.build("dockerpandian/hippo")
+                    app = docker.build("dockerbhagya/jenkins_1707")
                     app.inside {
                         sh 'echo $(curl localhost:8080)'
                     }
